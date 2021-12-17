@@ -11,40 +11,44 @@
 | second_name_kana   | string | null: false |
 | email              | string | null: false |
 | encrypted_password | string | null: false |
-| year               | string | null: false |
-| month              | string | null: false |
-| day                | string | null: false |
+| birth_date         | date   | null: false |
+
 
 ### Association
 
 * has_many :items
+* has_many :user
 
 ## items テーブル   商品情報
 
-| Column      | Type       | Options                        |
-| ----------- | ---------- | ------------------------------ |
-| user        | references | null: false, foreign_key: true |
-| image       | references | null: false, foreign_key: true |
-| item_name   | references | null: false, foreign_key: true |
-| explanation | references | null: false, foreign_key: true |
-| category    | references | null: false, foreign_key: true |
-| details     | references | null: false, foreign_key: true |
-| price       | references | null: false, foreign_key: true |
+| Column        | Type       | Options                        |
+| ------------- | ---------- | ------------------------------ |
+| user          | references | null: false, foreign_key: true |
+| burdened      | references | null: false,                   |
+| item_name     | references | null: false,                   |
+| explanation   | references | null: false,                   |
+| category      | references | null: false,                   |
+| details       | references | null: false,                   |
+| price         | references | null: false,                   |
+| delivery_area | references | null: false,                   |
+| delivery_day  | references | null: false,                   |
 
 ### Association
 
-* has_one :buyers
+* has_one :delivery
 - belongs_to :user
 
 ## buyers テーブル   購入記録
 
-| Column  | Type       | Options                        |
-| ------- | ---------- | ------------------------------ |
-| user    | references | null: false, foreign_key: true |
+| Column    | Type       | Options                        |
+| --------- | ---------- | ------------------------------ |
+| user      | references | null: false, foreign_key: true |
+| item_name | references | null: false, foreign_key: true |
 
 
 ### Association
 
+* has_one :buyer
 - belongs_to :user
 
 
@@ -52,8 +56,13 @@
 
 | Column           | Type       | Options                        |
 | ---------------- | ---------- | ------------------------------ |
-| delivery_address | references | null: false, foreign_key: true |
-| user             | references | null: false, foreign_key: true |
+| buyers           | references | null: false, foreign_key: true |
+| delivery_area    | references | null: false                    |
+| city             | references | null: false                    |
+| street           | references | null: false                    |
+| building         | references | null: false                    |
+| posttal_code     | references | null: false                    |
+| telephone_number | references | null: false                    |
 
 ### Association
 
