@@ -24,14 +24,14 @@
 | Column           | Type       | Options                        |
 | ---------------- | ---------- | ------------------------------ |
 | user             | references | null: false, foreign_key: true |
-| burdened_id      | integer    | null: false,                   |
-| item-name        | references | null: false,                   |
-| explanation      | text       | null: false,                   |
-| category_id      | integer    | null: false,                   |
-| details_id       | integer    | null: false,                   |
-| price            | references | null: false,                   |
-| delivery_area_id | integer    | null: false,                   |
-| delivery_day_id  | integer    | null: false,                   |
+| burdened_id      | integer    | null: false                    |
+| item_name        | string     | null: false                    |
+| explanation      | text       | null: false                    |
+| category_id      | integer    | null: false                    |
+| details_id       | integer    | null: false                    |
+| price            | integer    | null: false                    |
+| delivery_area_id | integer    | null: false                    |
+| delivery_day_id  | integer    | null: false                    |
 
 ### Association
 
@@ -43,7 +43,7 @@
 | Column    | Type       | Options                        |
 | --------- | ---------- | ------------------------------ |
 | user      | references | null: false, foreign_key: true |
-| items     | references | null: false, foreign_key: true |
+| item     | references | null: false, foreign_key: true |
 
 
 ### Association
@@ -53,7 +53,7 @@
 - belongs_to :user
 
 
-## deliverys テーブル   発送先情報
+## deliveries テーブル   発送先情報
 
 | Column           | Type       | Options                        |
 | ---------------- | ---------- | ------------------------------ |
