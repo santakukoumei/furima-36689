@@ -62,7 +62,7 @@
 | city             | string     | null: false                    |
 | street           | string     | null: false                    |
 | building         | string     |                                |
-| posttal_code     | string     | null: false                    |
+| postal_code     | string      | null: false                    |
 | telephone_number | string     | null: false                    |
 
 ### Association
