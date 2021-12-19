@@ -21,21 +21,21 @@
 
 ## items テーブル   商品情報
 
-| Column        | Type       | Options                        |
-| ------------- | ---------- | ------------------------------ |
-| user          | references | null: false, foreign_key: true |
-| burdened      | references | null: false,                   |
-| item          | references | null: false,                   |
-| explanation   | text       | null: false,                   |
-| category      | references | null: false,                   |
-| details       | text       | null: false,                   |
-| price         | references | null: false,                   |
-| delivery_area | string     | null: false,                   |
-| delivery_day  | string     | null: false,                   |
+| Column           | Type       | Options                        |
+| ---------------- | ---------- | ------------------------------ |
+| user             | references | null: false, foreign_key: true |
+| burdened_id      | integer    | null: false,                   |
+| item-name        | references | null: false,                   |
+| explanation      | text       | null: false,                   |
+| category_id      | integer    | null: false,                   |
+| details_id       | integer    | null: false,                   |
+| price            | references | null: false,                   |
+| delivery_area_id | integer    | null: false,                   |
+| delivery_day_id  | integer    | null: false,                   |
 
 ### Association
 
-- belongs_to :buyer
+* has_one :buyer
 - belongs_to :user
 
 ## buyers テーブル   購入記録
@@ -48,8 +48,8 @@
 
 ### Association
 
-* has_one :buyer
-* has_one :item
+* has_one :delivery
+- belongs_to :item
 - belongs_to :user
 
 
@@ -58,10 +58,10 @@
 | Column           | Type       | Options                        |
 | ---------------- | ---------- | ------------------------------ |
 | buyer            | references | null: false, foreign_key: true |
-| delivery_area    | references | null: false                    |
+| delivery_area_id | integer    | null: false                    |
 | city             | string     | null: false                    |
 | street           | string     | null: false                    |
-| building         | string     | null: false                    |
+| building         | string     |                                |
 | posttal_code     | string     | null: false                    |
 | telephone_number | string     | null: false                    |
 
