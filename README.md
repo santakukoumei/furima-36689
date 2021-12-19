@@ -2,8 +2,8 @@
 
 ## users テーブル   ユーザー情報
 
-| Column             | Type   | Options     |
-| ------------------ | ------ | ----------- |
+| Column             | Type   | Options                   |
+| ------------------ | ------ | ------------------------- |
 | name               | string | null: false               |
 | first_name         | string | null: false               |
 | second_name        | string | null: false               |
@@ -40,10 +40,10 @@
 
 ## buyers テーブル   購入記録
 
-| Column    | Type       | Options                        |
-| --------- | ---------- | ------------------------------ |
-| user      | references | null: false, foreign_key: true |
-| item     | references | null: false, foreign_key: true |
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| user   | references | null: false, foreign_key: true |
+| item   | references | null: false, foreign_key: true |
 
 
 ### Association
@@ -62,7 +62,7 @@
 | city             | string     | null: false                    |
 | street           | string     | null: false                    |
 | building         | string     |                                |
-| postal_code     | string      | null: false                    |
+| postal_code      | string     | null: false                    |
 | telephone_number | string     | null: false                    |
 
 ### Association
