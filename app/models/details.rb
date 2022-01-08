@@ -1,4 +1,4 @@
-class Detail < ActiveHash::Base
+class Details < ActiveHash::Base
   self.data = [
     { id: 1, state: '___' },
     { id: 2, state: '新品・未使用' },

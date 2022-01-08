@@ -14,7 +14,7 @@ class Item < ApplicationRecord
   #validates :item, presence: true #unless: :was_attached?
   validates :item_name, presence: true
   validates :explanation, presence: true
-  validates :price, presence: true
+  validates :price, numericality: {only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 99999}
   validates :image, presence: true
   validates :category_id, numericality: { other_than: 1 , message: "can't be blank"}
   validates :details_id, numericality: { other_than: 1 , message: "can't be blank"}
@@ -22,7 +22,7 @@ class Item < ApplicationRecord
   validates :delivery_area_id, numericality: { other_than: 1 , message: "can't be blank"}
   validates :delivery_day_id, numericality: { other_than: 1 , message: "can't be blank"}
 
-  #def was_attached?
-    #self.image.attached?
-  #end
+  def was_attached?
+    self.image.attached?
+  end
 end
