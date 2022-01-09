@@ -5,7 +5,7 @@ FactoryBot.define do
     explanation        {Faker::Lorem.sentence}
     category_id        {2}
     details_id         {2}
-    price              {Random.rand(300 .. 99999)}
+    price              {Random.rand(300 .. 9999999)}
     burdened_id        {2}
     delivery_area_id   {2}
     delivery_day_id    {2}

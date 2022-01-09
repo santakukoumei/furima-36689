@@ -20,6 +20,5 @@ class DeliveryArea < ActiveHash::Base
 
 include ActiveHash::Associations
 has_many :items
-belongs_to :delivery_area
 
 end

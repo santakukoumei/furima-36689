@@ -7,6 +7,5 @@ class Burdened < ActiveHash::Base
 
   include ActiveHash::Associations
   has_many :items
-  belongs_to :burdened
 
 end
