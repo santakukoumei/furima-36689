@@ -24,12 +24,12 @@
 | Column           | Type       | Options                        |
 | ---------------- | ---------- | ------------------------------ |
 | user             | references | null: false, foreign_key: true |
-| burdened_id      | integer    | null: false                    |
 | item_name        | string     | null: false                    |
-| explanation      | text       | null: false                    |
+| explanation      | text       | null: false                    |#説明
 | category_id      | integer    | null: false                    |
-| details_id       | integer    | null: false                    |
+| details_id       | integer    | null: false                    |#詳細
 | price            | integer    | null: false                    |
+| burdened_id      | integer    | null: false                    |#負担
 | delivery_area_id | integer    | null: false                    |
 | delivery_day_id  | integer    | null: false                    |
 
