@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root to: "items#index"
-   resources :items, only: [:new, :create, :edit, :show, :update]do
+   resources :items, only: [:new, :create, :edit, :show, :update, :destroy]do
    end
    resources :users, only: :show
 end
