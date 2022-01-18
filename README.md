@@ -17,7 +17,7 @@
 ### Association
 
 * has_many :items
-* has_many :buyers
+* has_many :orders
 
 ## items テーブル   商品情報
 
@@ -35,10 +35,10 @@
 
 ### Association
 
-* has_one :buyer
+* has_one :order
 - belongs_to :user
 
-## buyers テーブル   購入記録
+## orders テーブル   購入記録
 
 | Column | Type       | Options                        |
 | ------ | ---------- | ------------------------------ |
@@ -57,14 +57,14 @@
 
 | Column           | Type       | Options                        |
 | ---------------- | ---------- | ------------------------------ |
-| buyer            | references | null: false, foreign_key: true |
-| delivery_area_id | integer    | null: false                    |
-| city             | string     | null: false                    |
-| street           | string     | null: false                    |
-| building         | string     |                                |
+| user             | references | null: false, foreign_key: true |
+| delivery_area_id | integer    | null: false                    |#都道府県
+| city             | string     | null: false                    |#市町村
+| street           | string     | null: false                    |#番地
+| building         | string     |                                |#建物
 | postal_code      | string     | null: false                    |
 | telephone_number | string     | null: false                    |
 
 ### Association
 
-- belongs_to :buyer
+- belongs_to :order
