@@ -5,8 +5,8 @@ class OrdersDeliveries
 
   with_options presence: true do
     validates :token
-    validates :city, format: { with: /\A[ぁ-んァ-ン一-龥]/, message: "is invalid. Input full-width characters."}
-    validates :telephone_number, format: {with: /\A[0-9]{10,11}\z/, message: "is invalid. Include hyphen(-)"}
+    validates :city
+    validates :telephone_number, format: {with: /\A[0-9]{10,11}\z/, message: "is invalid."}
     validates :user_id
     validates :item_id
     validates :street
