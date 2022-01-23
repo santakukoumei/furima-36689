@@ -57,7 +57,7 @@
 
 | Column           | Type       | Options                        |
 | ---------------- | ---------- | ------------------------------ |
-| user             | references | null: false, foreign_key: true |
+| order            | references | null: false, foreign_key: true |
 | delivery_area_id | integer    | null: false                    |#都道府県
 | city             | string     | null: false                    |#市町村
 | street           | string     | null: false                    |#番地
