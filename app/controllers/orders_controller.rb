@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
   before_action :set_item, only: [:index, :create]
+  before_action :prevent_url, only: [:index, :create]
 
   def index
     @orders_deliveries = OrdersDeliveries.new
@@ -35,5 +36,11 @@ class OrdersController < ApplicationController
       card: order_params[:token],
       currency: 'jpy'
     )
+  end
+
+  def prevent_url
+    if @item.user_id == current_user.id || @item.order != nil
+      redirect_to root_path
+    end
   end
 end
