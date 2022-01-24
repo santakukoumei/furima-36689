@@ -10,8 +10,11 @@ RSpec.describe OrdersDeliveries, type: :model do
 
     context '入力内容に問題がない場合' do
       it 'すべての値が正しく入力されていれば保存できること' do
+        expect(@orders_deliveries).to be_valid
       end
       it 'buildingは空でも保存できること' do
+        @orders_deliveries.building = ''
+        expect(@orders_deliveries).to be_valid
       end
     end
 

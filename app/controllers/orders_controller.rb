@@ -32,7 +32,7 @@ class OrdersController < ApplicationController
   end
 
   def pay_item
-    Payjp.api_key = "sk_test_1a89b3fcff5d0cfc48dd4fa5"
+    Payjp.api_key = "~~~"
     Payjp::Charge.create(
       amount: @item.price,
       card: order_params[:token],
@@ -45,6 +45,6 @@ class OrdersController < ApplicationController
   end
   
   def contributor_confirmation
-    redirect_to root_path unless redirect_to action: :index
-  end 
+    redirect_to root_path if @item.order.present?
+  end
 end
