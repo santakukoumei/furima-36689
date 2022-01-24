@@ -1,6 +1,8 @@
 class OrdersController < ApplicationController
+  before_action :authenticate_user!, only: [:index, :show]
   before_action :set_item, only: [:index, :create]
-  before_action :prevent_url, only: [:index, :create]
+  before_action :contributor_confirmation, only: [:index, :create, :edit]
+ 
 
   def index
     @orders_deliveries = OrdersDeliveries.new
@@ -38,9 +40,11 @@ class OrdersController < ApplicationController
     )
   end
 
-  def prevent_url
-    if @item.user_id == current_user.id || @item.order != nil
-      redirect_to root_path
-    end
+  def contributor_confirmation
+    redirect_to root_path unless @item.user == current_user
   end
+  
+  def contributor_confirmation
+    redirect_to root_path unless redirect_to action: :index
+  end 
 end
