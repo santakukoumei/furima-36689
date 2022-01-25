@@ -3,7 +3,7 @@ class Item < ApplicationRecord
   
 
   has_one_attached :image
-  has_one :buyer
+  has_one :order
   belongs_to :user
   belongs_to :category
   belongs_to :details
